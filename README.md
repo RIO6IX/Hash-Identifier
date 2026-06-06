@@ -15,7 +15,9 @@ Hash Identifier is a professional, client-side web application for identifying l
 
 ## Live Demo
 
-If hosted with GitHub Pages, the app can run directly from the repository as a static site.
+Access the web app here:
+
+<https://rio6ix.github.io/Hash-Identifier/>
 
 Repository: <https://github.com/RIO6IX/Hash-Identifier>
 
@@ -139,5 +141,4 @@ Created for Chanuka Isuru Sampath (RIO6IX).
 
 ## Research References
 
-- OWASP Password Storage Cheat Sheet: <https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html>
 - hashcat example hashes and mode numbers: <https://hashcat.net/wiki/doku.php?id=example_hashes>
