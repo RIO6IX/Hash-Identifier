@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Hash Identifier is a client-side web application that identifies likely hash types from prefixes, length, character set, and known patterns."
+    >
+    <meta name="author" content="Chanuka Isuru Sampath (RIO6IX)">
+    <title>Hash Identifier | RIO6IX</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="scene-bg" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#tool" aria-label="Hash Identifier home">
+        <span class="brand-mark">#</span>
+        <span>
+          <strong>Hash Identifier</strong>
+          <small>by RIO6IX</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#tool">Tool</a>
+        <a href="#examples">Examples</a>
+        <a href="#reference">Reference</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="tool" class="hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">Professional hash intelligence</p>
+          <h1><span>Identify</span> hash formats with evidence.</h1>
+          <p>
+            Paste one hash or a list of hashes. The app checks prefixes, known
+            layouts, digest length, character set, and common non-hash inputs.
+            Results include evidence, confidence, difficulty, and authorized
+            testing command templates.
+          </p>
+        </div>
+        <div class="stat-strip" aria-label="App capabilities">
+          <span><strong>30+</strong> supported formats</span>
+          <span><strong>0</strong> network uploads</span>
+          <span><strong>Hashcat</strong> and John hints</span>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="tool-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Input</p>
+            <h2>Hash sample</h2>
+            <p>One hash per line. Keep sensitive data local and test only material you are authorized to assess.</p>
+          </div>
+
+          <form id="hash-form" class="input-area">
+            <label for="hash-input">Hash input</label>
+            <textarea
+              id="hash-input"
+              spellcheck="false"
+              placeholder="Paste a hash here, for example:&#10;5f4dcc3b5aa765d61d8327deb882cf99&#10;$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQNQy.uK4Of2T7G.VHvgvWK"
+            ></textarea>
+            <div class="actions">
+              <button class="primary-button" type="submit">Identify</button>
+              <button class="secondary-button" type="button" id="clear-button">Clear</button>
+              <button class="secondary-button" type="button" id="copy-button">Copy report</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="result-panel" aria-live="polite">
+          <div class="result-header">
+            <div>
+              <p class="eyebrow">Evidence</p>
+              <h2 id="result-title">Ready</h2>
+            </div>
+            <span id="result-count" class="count-pill">0 matches</span>
+          </div>
+          <div id="results" class="results empty-state">
+            <p>Paste a hash and run identification. The input box starts clear and nothing leaves your browser.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="examples" class="section-band">
+        <div class="section-heading">
+          <p class="eyebrow">Try known samples</p>
+          <h2>Examples</h2>
+        </div>
+        <div id="example-grid" class="example-grid"></div>
+      </section>
+
+      <section id="reference" class="section-band reference-layout">
+        <div>
+          <p class="eyebrow">How detection works</p>
+          <h2>Signals used by the app</h2>
+          <p>
+            Modern password hashes often self-identify using prefixes such as
+            <code>$argon2id$</code> or <code>$2b$</code>. Older fast hashes such as
+            MD5 and SHA-1 usually expose only length and character set, so the app
+            returns ranked candidates instead of pretending there is one certain answer.
+          </p>
+        </div>
+        <div class="signal-grid">
+          <article>
+            <strong>1. Prefix</strong>
+            <span>Argon2, bcrypt, scrypt, Unix crypt, phpass, Django, LDAP.</span>
+          </article>
+          <article>
+            <strong>2. Known layout</strong>
+            <span>MySQL5, NetNTLMv1/v2, DES crypt, JWT, URL, base encodings.</span>
+          </article>
+          <article>
+            <strong>3. Hex length</strong>
+            <span>32, 40, 56, 64, 96, 128 and other common digest sizes.</span>
+          </article>
+          <article>
+            <strong>4. Safety note</strong>
+            <span>This identifies formats and suggests commands for authorized testing only.</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section-band about-layout">
+        <div>
+          <p class="eyebrow">Creator credit</p>
+          <h2>Chanuka Isuru Sampath (RIO6IX)</h2>
+          <p>
+            Built as an educational cybersecurity web tool for learning common hash
+            families, password storage formats, and identification heuristics.
+          </p>
+        </div>
+        <address class="profile-links">
+          <a href="https://www.linkedin.com/in/chanuka-isuru-sampath/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/RIO6IX" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://medium.com/@chanuka1" target="_blank" rel="noopener">Medium</a>
+          <a href="https://rio6ix.github.io/chanuka/" target="_blank" rel="noopener">Portfolio Website</a>
+          <a href="https://www.youtube.com/@chanukaisuru0" target="_blank" rel="noopener">Youtube</a>
+          <a href="https://chanuka1.medium.com/" target="_blank" rel="noopener">Medium Blog</a>
+        </address>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
